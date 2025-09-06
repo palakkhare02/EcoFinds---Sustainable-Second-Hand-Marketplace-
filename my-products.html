@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Products - EcoFinds</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo_container">
+                <a href="index.html" class="site_name">EcoFinds</a>
+            </div>
+
+            <!-- Search & Location -->
+            <div class="search_container">
+                <select class="location_select" id="locationSelect">
+                    <option value="all">All Locations</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="bangalore">Bangalore</option>
+                </select>
+                <input type="text" id="searchInput" placeholder="Search eco-friendly products...">
+                <button class="search_btn" id="searchBtn">🔍</button>
+            </div>
+
+            <!-- Right side -->
+            <div class="navbar_right">
+                <!-- Profile Dropdown (when logged in) -->
+                <div class="profile_dropdown_container" id="profileDropdown" style="display: none;">
+                    <button class="profile_trigger" id="profileTrigger">
+                        <div class="profile_avatar">
+                            <span class="material-symbols-outlined">person</span>
+                        </div>
+                        <span class="profile_name" id="profileName">User</span>
+                        <span class="material-symbols-outlined dropdown_arrow">keyboard_arrow_down</span>
+                    </button>
+                    
+                    <div class="profile_dropdown" id="profileDropdownMenu">
+                        <div class="dropdown_header">
+                            <div class="user_info">
+                                <div class="user_avatar">
+                                    <span class="material-symbols-outlined">person</span>
+                                </div>
+                                <div class="user_details">
+                                    <div class="user_name" id="dropdownUserName">User Name</div>
+                                    <div class="user_email" id="dropdownUserEmail">user@example.com</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dropdown_divider"></div>
+                        
+                        <div class="dropdown_menu">
+                            <a href="profile.html" class="dropdown_item">
+                                <span class="material-symbols-outlined">person</span>
+                                <span>My Profile</span>
+                            </a>
+                            <a href="add.html" class="dropdown_item">
+                                <span class="material-symbols-outlined">add</span>
+                                <span>Add Product</span>
+                            </a>
+                            <a href="my-products.html" class="dropdown_item">
+                                <span class="material-symbols-outlined">inventory_2</span>
+                                <span>My Products</span>
+                            </a>
+                            <a href="#" class="dropdown_item">
+                                <span class="material-symbols-outlined">favorite</span>
+                                <span>Wishlist</span>
+                            </a>
+                        </div>
+                        
+                        <div class="dropdown_divider"></div>
+                        
+                        <div class="dropdown_menu">
+                            <a href="#" class="dropdown_item logout_item" id="logoutLink">
+                                <span class="material-symbols-outlined">logout</span>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Login Button (when not logged in) -->
+                <div class="action_container" id="loginContainer">
+                    <a href="login.html" class="login" id="loginLink">Login</a>
+                </div>
+
+                <!-- Sell Button -->
+                <div class="sell_container">
+                    <a href="add.html" class="sell_btn">+ ADD PRODUCT</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Categories Menu -->
+        <nav class="categories">
+            <a href="#" class="category-filter" data-category="all">ALL CATEGORIES</a>
+            <a href="#" class="category-filter" data-category="eco-gadgets">Eco Gadgets</a>
+            <a href="#" class="category-filter" data-category="reusable">Reusable Products</a>
+            <a href="#" class="category-filter" data-category="organic">Organic Food</a>
+            <a href="#" class="category-filter" data-category="clothing">Clothing</a>
+            <a href="#" class="category-filter" data-category="furniture">Furniture</a>
+            <a href="#" class="category-filter" data-category="energy">Energy Solutions</a>
+            <a href="#" class="category-filter" data-category="others">Others</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>My Products</h1>
+                <p>Manage your listed products</p>
+            </div>
+
+            <!-- Products Management -->
+            <div class="my-products-section">
+                <div class="products-header">
+                    <h2>Your Listed Products</h2>
+                    <div class="products-actions">
+                        <a href="add.html" class="btn-primary">
+                            <span class="material-symbols-outlined">add</span>
+                            Add New Product
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="products-grid" id="myProductsGrid">
+                    <!-- User's products will be loaded here -->
+                </div>
+                
+                <div class="no-products" id="noMyProducts" style="display: none;">
+                    <div class="no-products-content">
+                        <span class="material-symbols-outlined">inventory_2</span>
+                        <h3>No products found</h3>
+                        <p>You haven't listed any products yet. Start by adding your first product!</p>
+                        <a href="add.html" class="btn-primary">Add Your First Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-wrapper">
+        <div class="footer-container">
+            <!-- Column 1: About -->
+            <div class="footer-column">
+                <h3>About EcoFinds</h3>
+                <p>EcoFinds is your one-stop platform for eco-friendly products, from solar devices to reusable everyday essentials. Together, let's build a greener tomorrow. 🌍</p>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="add.html">Add Product</a>
+                <a href="my-products.html">My Products</a>
+                <a href="profile.html">Profile</a>
+                <a href="login.html">Login</a>
+            </div>
+
+            <!-- Column 3: Categories -->
+            <div class="footer-column">
+                <h3>Categories</h3>
+                <a href="#" class="category-filter" data-category="eco-gadgets">Eco Gadgets</a>
+                <a href="#" class="category-filter" data-category="reusable">Reusable Products</a>
+                <a href="#" class="category-filter" data-category="organic">Organic Food</a>
+                <a href="#" class="category-filter" data-category="clothing">Eco Clothing</a>
+            </div>
+
+            <!-- Column 4: Stay Connected -->
+            <div class="footer-column">
+                <h3>Stay Connected</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Instagram"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733646.png" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© 2025 EcoFinds. All Rights Reserved. | Designed with ♻️ love</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
